@@ -7,6 +7,10 @@
 # AIDL
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V4-ndk:64
+    
+# Overlays
+PRODUCT_PACKAGES += \
+    MiuiCameraOverlayIcon
 
 # Priv-app permission
 PRODUCT_COPY_FILES += \
