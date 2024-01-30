@@ -60,6 +60,12 @@ function blob_fixup() {
         system_ext/lib64/libcamera_ispinterface_jni.xiaomi.so)
             "${PATCHELF}" --add-needed "libgui_shim_miuicamera.so" "${2}"
             ;;
+        system_ext/priv-app/MiuiCamera/MiuiCamera.apk)
+            apktool d -q proprietary/system_ext/priv-app/MiuiCamera/MiuiCamera.apk -f
+            grep -rl "com.miui.gallery" MiuiCamera | xargs sed -i 's|"com.miui.gallery"|"com.google.android.apps.photos"|g'
+            apktool b -q MiuiCamera -o proprietary/system_ext/priv-app/MiuiCamera/MiuiCamera.apk
+            rm -rf MiuiCamera
+            ;;
     esac
 }
 
