@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# AIDL
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common-V4-ndk:64
 
 # Priv-app permission
 PRODUCT_COPY_FILES += \
